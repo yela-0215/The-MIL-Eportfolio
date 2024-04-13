@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('download.jpg');
+            background-size: cover;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .container {
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fcdede; /* pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #f998a4; /* light pastel pink */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background: rgba(255, 228, 232, 0.8); /* pastel pink */
+            outline: none;
+            color: #666;
+            font-family: "Times New Roman", Times, serif;
+        }
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #aaa;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #fc8d9e; /* pastel pink */
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background: #f57585; /* lighter pastel pink */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome to Yela's World!</h2>
+    <h3)This website is delighted to showcase her thoughts, queeries, and experiences! Login and enjoy </h3>
+
+    <form action="website.html" method="post">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
+

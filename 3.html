@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Game Quiz</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+            background-image: url('c.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 228, 232, 0.9); /* pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #6b2c50; /* pastel dark pink */
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .choice-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ff66b2; /* pink */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .choice-button:hover {
+            background-color: #ff4da6; /* lighter pink */
+        }
+        .answer {
+            display: none;
+            margin-top: 20px;
+        }
+        .answer p {
+            margin-bottom: 10px;
+        }
+        .answer img {
+            max-width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Guess The Right One Game!</h1>
+    <p>Test your luck!</p>
+    <a href="website.html" class="button">Go Back To Main Website</a>
+</div>
+
+<div class="container" id="quiz">
+    <button class="choice-button" onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div class="container" id="question-container1" style="display:none;">
+    <div class="question">
+        <h2>What were Yela's expectations about this course? (Compared to her actual experience).</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 1)">Fun!</button>
+        <button class="choice-button" onclick="showAnswer(false, 1)">Boring :(</button>
+    </div>
+    <div class="answer" id="answer1"></div>
+    <button class="choice-button" onclick="hideAnswer(1)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container2" style="display:none;">
+    <div class="question">
+        <h2>Which among the activities/games/tasks in the course was Yela's favorite, and why?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 2)">Shagidi Shagidi Shapopo</button>
+        <button class="choice-button" onclick="showAnswer(false, 2)">Modified Bring Me</button>
+    </div>
+    <div class="answer" id="answer2"></div>
+    <button class="choice-button" onclick="hideAnswer(2)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container3" style="display:none;">
+    <div class="question">
+        <h2>Which among the activities/games/tasks in the course did Yela like the least, and why?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 3)">The games with the buzzer</button>
+        <button class="choice-button" onclick="showAnswer(false, 3)">Charades</button>
+    </div>
+    <div class="answer" id="answer3"></div>
+    <button class="choice-button" onclick="hideAnswer(3)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container4" style="display:none;">
+    <div class="question">
+        <h2>What is the lesson that Yela got from this course that she feels she'll bring with her wherever life takes her?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(false, 4)">Motion Information</button>
+        <button class="choice-button" onclick="showAnswer(true, 4)">Media literacy and Audio Information</button>
+    </div>
+    <div class="answer" id="answer4"></div>
+    <button class="choice-button" onclick="hideAnswer(4)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container5" style="display:none;">
+    <div class="question">
+        <h2>What skill did Yela learn/improve in this course?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 5)">Audio information and media literacy</button>
+        <button class="choice-button" onclick="showAnswer(false, 5)">Motion Information and Evolution of Media</button>
+    </div>
+    <div class="answer" id="answer5"></div>
+    <button class="choice-button" onclick="hideAnswer(5)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container6" style="display:none;">
+    <div class="question">
+        <h2>What value did this course and all the activities done in it, instill in Yela?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 6)">Being a media literate</button>
+        <button class="choice-button" onclick="showAnswer(false, 6)">Visual Information</button>
+    </div>
+    <div class="answer" id="answer6"></div>
+    <button class="choice-button" onclick="hideAnswer(6)">Hide Answer</button>
+</div>
+
+<div class="container" id="question-container7" style="display:none;">
+    <div class="question">
+        <h2>What is the one thing Yela will not forget about the course, and why?</h2>
+    </div>
+    <div class="choices">
+        <button class="choice-button" onclick="showAnswer(true, 7)">Media literacy and critical thinking</button>
+        <button class="choice-button" onclick="showAnswer(false, 7)">Text Information</button>
+    </div>
+    <div class="answer" id="answer7"></div>
+    <button class="choice-button" onclick="hideAnswer(7)">Hide Answer</button>
+</div>
+
+<script>
+    function startQuiz() {
+        var quizContainer = document.getElementById("quiz");
+        var questions = document.querySelectorAll('[id^="question-container"]');
+        quizContainer.style.display = "none";
+        for (var i = 0; i < questions.length; i++) {
+            questions[i].style.display = "block";
+        }
+    }
+
+    function showAnswer(correct, questionNumber) {
+        var answerDiv = document.getElementById("answer" + questionNumber);
+        if (correct) {
+            if (questionNumber === 1) {
+                answerDiv.innerHTML = "<p>Correct! Before delving into the course, my expectations centered around learning how to create digital content akin to what I had encountered on platforms such as social media. I anticipated gaining insights into crafting engaging posts, and captivating visuals, and perhaps exploring the dynamics of audience interaction. However compared to my experience, what I discovered exceeded these initial expectations. Beyond just digital platforms, the course also sheds light on the creation of non-digital content, like that found in traditional print media. This expanded perspective broadened my understanding of content creation, highlighting common principles and strategies applicable across both digital and non-digital realms. As a result, I gained a more comprehensive toolkit for effectively communicating and engaging with audiences, regardless of the medium used.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 2) {
+                answerDiv.innerHTML = "<p>Correct! Shagidi Shagidi Shapopo is hands down one of my favorite games. It's not just the quirky name that draws me in, but the gameplay itself is incredibly fun and addicting. Right from the start, I was hooked by its mix of strategy and adventure, keeping me coming back for more challenges. What made Shagidi Shagidi Shapopo so special is how it was a fun way of creating memories that I'll always treasure. Overall, Shagidi Shagidi Shapopo isn't just a game—it's an adventure filled with laughter and excitement. It's a reminder of the magic of learning, we can learn through various means and experiences.</p><img src='yes.gif' alt='No'><a href='https://drive.google.com/file/d/1CNKQYXVQUNLXr1m7jZecE45PyyF49OB7/view?usp=sharing'>Go to Shagidi Shagidi Shapopo Gameplay</a>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 3) {
+                answerDiv.innerHTML = "<p>Correct! If I had to pick an activity I liked the least from the course, it would likely be the games with the buzzer. While they were enjoyable, they didn't quite capture my interest in the same way as some of the other activities. They were fun in their own right, but when compared to the depth and engagement of other games, they simply didn't stand out as much for me.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 4) {
+                answerDiv.innerHTML = "<p>Correct! The lesson I've learned from this course is the critical importance of media literacy in advocating for fairness, equality, and inclusivity. By understanding media systems and their societal impacts, I feel empowered to challenge stereotypes, amplify marginalized voices, and support diverse platforms. Moreover, becoming a responsible consumer of media has taught me to approach content with a critical eye, avoiding misinformation and contributing to a healthier media landscape. Lastly, as a HUMSS student, grasping audio information is crucial for accessing diverse knowledge forms, requiring me to analyze sources critically, understand societal roles, and stay updated on technological advancements to maximize the potential of audio for education and engagement.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 5) {
+                answerDiv.innerHTML = "<p>In this course, I've learned and improved my skills in audio information and media literacy, which are crucial for both my academic pursuits and societal engagement. By understanding various forms of audio content and staying updated on technological advancements, I can effectively engage with diverse perspectives and stay informed about current events. Moreover, honing critical thinking skills through analyzing audio content enables me to navigate information landscapes confidently, distinguishing fact from fiction. These literacies have not only equipped me with essential skills and knowledge but also fostered a mindset of critical inquiry, ethical engagement, and digital citizenship, enabling me to promote transparency, equity, and accountability in my interactions with media, information, and technology.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 6) {
+                answerDiv.innerHTML = "<p>Correct! This course instilled in me the value of media literacy and critical thinking in navigating today's information-rich society. By engaging with various forms of media and activities, I've learned the importance of being discerning consumers of information, questioning sources, and critically analyzing content. Additionally, the emphasis on promoting fairness, equality, and inclusivity in media usage has underscored the significance of using media as a tool for positive social change. Overall, the course has instilled in me a sense of responsibility to advocate for media justice, contribute to a healthier media landscape, and actively participate in shaping a more informed and equitable society.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            } else if (questionNumber === 7) {
+                answerDiv.innerHTML = "<p>Correct! The one thing I will never forget about this course is the profound realization of the multifaceted roles and responsibilities inherent in media. It's not just about consuming content; it's about recognizing my agency as a mediator of information and understanding the profound impact media has on society. This revelation has fundamentally shifted my perspective, highlighting the interconnectedness of media, information, and literacy in shaping our world. I now see myself not just as a passive consumer but as an active participant in the media landscape, with the power to influence and shape narratives for the betterment of society. This newfound awareness has left an indelible mark on me, inspiring me to approach media engagement with mindfulness, responsibility, and a commitment to positive social change.</p><img src='yes.gif' alt='No'>"; 
+                answerDiv.style.color = "#6b2c50"; /* pastel dark pink */
+            }
+        } else {
+            answerDiv.innerHTML = "<p>That is incorrect! Try the other one ;)</p><img src='no.gif' alt='No'>"; 
+            answerDiv.style.color = "red";
+        }
+        answerDiv.style.display = "block";
+    }
+
+    function hideAnswer(questionNumber) {
+        var answerDiv = document.getElementById("answer" + questionNumber);
+        answerDiv.style.display = "none";
+    }
+</script>
+</body>
+</html>
