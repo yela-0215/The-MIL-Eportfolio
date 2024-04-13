@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Butterfly Background</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('butterfly.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(219, 112, 147, 0.7); /* dark pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #fff; /* white */
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ff66b2; /* pink */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff4da1; /* dark pink */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Grateful Points</h1>
+    <p>I found that the skit-based discussion made grasping certain concepts much easier. Observing real-life situations as they unfold offers a level of understanding that traditional presentations often lack. This approach not only made the learning experience more fruitful but also added an element of fun and engagement. The interactive nature of skits not only deepens comprehension but also sparks creativity. </p>
+
+    <p>It creates an environment where learning becomes enjoyable, encouraging students to actively participate and grasp the lesson more effectively. In my opinion, incorporating skits into the learning process is an excellent way to foster a dynamic and enriching educational experience.</p>
+
+ 
+    <a href="website.html" class="button">Go Back To Main Website</a>
+<a href="1.html" class="button">Go Back To Media & Information Literate Consumer</a>
+ <a href="log3.html" class="button">Go Back To Reflection Log 3</a>
+
+    <a href="reflog3-3.html" class="button">Go To Pain Points</a>
+</div>
+
+</body>
+</html>

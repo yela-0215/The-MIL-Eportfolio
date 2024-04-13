@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another Website</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('butterfly.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(219, 112, 147, 0.9); /* darker pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #fff; /* white */
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            text-decoration: none;
+            width: calc(33.33% - 20px); /* Adjusted width for 3 buttons in a row */
+            position: relative;
+        }
+        .button img {
+            width: 100%;
+            vertical-align: top;
+            transition: transform 0.3s ease;
+        }
+        .button:hover img {
+            transform: scale(1.1);
+        }
+        .button span {
+            display: block;
+            padding: 10px 0;
+            color: #fff; /* white */
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Media & Information Literate Consumer</h1>
+    <a href="log1.html" class="button">
+        <img src="pink1.jpg" alt="Button 1">
+        <span>Reflection Log 1</span>
+    </a>
+    <a href="log2.html" class="button">
+        <img src="pink2.jpg" alt="Button 2">
+        <span>Reflection Log 2</span>
+    </a>
+    <a href="log3.html" class="button">
+        <img src="pink3.jpg" alt="Button 3">
+        <span>Reflection Log 3</span>
+    </a>
+</div>
+<center><h3><a href="website.html " class="button"> Go Back To Main Website </a> </h3></center>
+
+
+ 
+</body>
+</html>

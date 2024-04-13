@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection Logs</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 192, 203, 0.9); /* semi-dark pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #fff; /* white */
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #6b2c50; /* semi-pastel dark pink */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            text-decoration: none;
+            width: calc(33.33% - 10px); /* Adjusted width for 3 buttons in a row */
+            vertical-align: top;
+            position: relative;
+        }
+        .button img {
+            width: 80%; /* Adjusted width for the image */
+            vertical-align: top;
+            transition: transform 0.3s ease;
+        }
+        .button:hover img {
+            transform: scale(1.1);
+        }
+        .button span {
+            display: block;
+            padding: 5px 0;
+            color: #6b2c50; /* semi-pastel dark pink */
+            font-size: 14px;
+        }
+        .login-image {
+            width: 40%; /* Adjusted width for the login image */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The MIL Portfolio</h1>
+   
+	<a href="0225.mp4" class="button"> 
+   <img src="B.gif" alt="Login Image" class="login-image">
+</a>
+
+    <h2>List of Entries</h2>
+    <a href="1.html" class="button">
+        <img src="1.jpg" alt="Media & Information Literate Consumer">
+        <span>Media & Information Literate Consumer</span>
+    </a>
+    <a href="2.html" class="button">
+        <img src="2.jpg" alt="Media & Information Literate Producer">
+        <span>Media & Information Literate Producer</span>
+    </a>
+    <a href="3.html" class="button">
+        <img src="3.jpg" alt="The MIL Experience">
+        <span>The MIL Experience</span>
+    </a>
+</div>
+
+</body>
+</html>

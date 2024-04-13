@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another Website</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('butterfly.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(219, 112, 147, 0.9); /* darker pastel pink */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #fff; /* white */
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .button {
+            flex: 1 1 calc(33.33% - 20px); /* Adjusted width for 3 buttons in a row */
+            margin: 10px;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Media & Information Literate Consumer</h1>
+    <div class="button-container">
+        <div class="button dropdown">
+            <img src="pink1.jpg" alt="Button 1">
+            <span>Reflection Log 1</span>
+            <div class="dropdown-content">
+                <p>Additional information for Reflection Log 1 goes here.</p>
+            </div>
+        </div>
+        <div class="button dropdown">
+            <img src="pink2.jpg" alt="Button 2">
+            <span>Reflection Log 2</span>
+            <div class="dropdown-content">
+                <p>Additional information for Reflection Log 2 goes here.</p>
+            </div>
+        </div>
+        <div class="button dropdown">
+            <img src="pink3.jpg" alt="Button 3">
+            <span>Reflection Log 3</span>
+            <div class="dropdown-content">
+                <p>Additional information for Reflection Log 3 goes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
